@@ -1,0 +1,21 @@
+#include <ctime>
+#include "Particle.h"
+
+//class to represent a particle filter
+class P_filter{
+
+private:
+
+	ArrayList<Particle *> *pts;
+	Robot *bot;
+	time_t time_c;
+	PPMImage* map;
+	
+public:
+	P_filter(Robot* r, PPMImage* map, int n);
+	void predict();
+	void correct();
+	void resample(int n);
+	void display_particles( PPMImage *red_map );
+	
+};
